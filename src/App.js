@@ -26,22 +26,41 @@ class App extends React.Component {
     };
   }
     
+  // Adding a new todo list item
     AddTodoItem = element => {
         element.preventDefault();
-        let todoscurrently = this.state.todoscurrently.slice();
+        let todoscurrently = this.state.todoscurrently;
+        console.log(todoscurrently);
         todoscurrently.push({task: this.state.todo, completed: false, id: Date.now()});
         this.setState({todoscurrently, todo: ''});
     }
-
+  //changing state to be the input
     ChangeTodo = element => {
       this.setState({[element.target.name]: element.target.value});
     }
-  
+  //marking complete by passing the todo.id all the way up from todo.js
+    ToggleComplete= (element) => {
+      //console.log(element);
+      //loop over todo state, find todo item by id, change completed to true, and return updated list to state
+      let completecheck = this.state.todoscurrently.map((item) => {
+          if(item.id === element) {
+            item.completed = !item.completed;
+            return item;
+          }
+          else { return item;
+          }
+      });
+      this.setState({todoscurrently: completecheck});
+    }
+
+
+  //clearing complete
   render() {
     return (
       <div>
         <TodoList 
-        todos={this.state.todoscurrently} />
+        todos={this.state.todoscurrently}
+        handleToggleComplete= {this.ToggleComplete}/>
         <TodoForm 
         value={this.state.todo}
         handleChangeTodo={this.ChangeTodo}
