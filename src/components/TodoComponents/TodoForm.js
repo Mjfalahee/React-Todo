@@ -11,9 +11,11 @@ import React from 'react';
 const TodoForm = props => {
         return(
         <div>
-        <input type="text" placeholder="Add new entry here" name="todo" value={props.value} onChange={props.handleChangeTodo} />
+        <form onSubmit={props.handleAddTodoItem}>
+        <input type="text" placeholder="Add new entry here" name="todo" value={props.value} onChange={props.handleChangeTodo}  />
         <button className="enter" onClick={props.handleAddTodoItem}>Submit</button>
         <button className="clear">Clear Completed</button>
+        </form>
         </div>
         );
 }
