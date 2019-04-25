@@ -1,18 +1,6 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
-
-let todoo = [
-  {
-    task: 'Organize Garage',
-    id: 1528817077286,
-    completed: false
-  },
-  {
-    task: 'Bake Cookies',
-    id: 1528817084358,
-    completed: false
-  }
-];
+import TodoList from './components/TodoComponents/TodoList';
 
 
 class App extends React.Component {
@@ -22,8 +10,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todo: "",
-      todoOnState: [
+      todoscurrently: [
         {
           task: 'Organize Garage',
           id: 1528817077286,
@@ -34,14 +21,17 @@ class App extends React.Component {
           id: 1528817084358,
           completed: false
         }
-      ]
+      ],
+      todo: ''
     };
+    
   }
   
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
+        <TodoList todos={this.state.todoscurrently} />
         <TodoForm />
       </div>
     );

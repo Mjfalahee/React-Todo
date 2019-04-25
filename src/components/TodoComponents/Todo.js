@@ -5,7 +5,7 @@ import React from 'react';
 function Todo(props) {
    return (
      <div className="todobullets">
-      <ul className="bulletitem"> {props.task}</ul>
+      <ul className="bulletitem"> {props.todo.task}</ul>
      </div>
    );
 }
