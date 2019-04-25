@@ -27,18 +27,23 @@ class App extends React.Component {
   }
     
   // Adding a new todo list item
+
     AddTodoItem = element => {
-        element.preventDefault();
+        element.preventDefault(); //prevents browser from refreshing
         let todoscurrently = this.state.todoscurrently;
         console.log(todoscurrently);
         todoscurrently.push({task: this.state.todo, completed: false, id: Date.now()});
         this.setState({todoscurrently, todo: ''});
     }
-  //changing state to be the input
+
+  //Holds the input as a state
+
     ChangeTodo = element => {
       this.setState({[element.target.name]: element.target.value});
     }
+
   //marking complete by passing the todo.id all the way up from todo.js
+
     ToggleComplete= (element) => {
       //console.log(element);
       //loop over todo state, find todo item by id, change completed to true, and return updated list to state
@@ -55,6 +60,12 @@ class App extends React.Component {
 
 
   //clearing complete
+  
+  ClearComplete = (e) => {
+    e.preventDefault();
+
+  }
+
   render() {
     return (
       <div>
@@ -64,7 +75,8 @@ class App extends React.Component {
         <TodoForm 
         value={this.state.todo}
         handleChangeTodo={this.ChangeTodo}
-        handleAddTodoItem={this.AddTodoItem}/>
+        handleAddTodoItem={this.AddTodoItem}
+        handleClearComplete={this.ClearComplete}/>
       </div>
     );
   }
