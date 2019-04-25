@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoForm from './components/TodoComponents/TodoForm';
 import TodoList from './components/TodoComponents/TodoList';
+import './App.scss';
 
 
 class App extends React.Component {
@@ -63,12 +64,15 @@ class App extends React.Component {
   
   ClearComplete = (e) => {
     e.preventDefault();
-
+    let nocompletes = this.state.todoscurrently.filter(todos => todos.completed === false)
+    //console.log(nocompletes);
+    this.setState({todoscurrently: nocompletes});
   }
 
   render() {
     return (
-      <div>
+      <div className="appcontainer">
+      <h2 className="title">Tasks, Chores..</h2><h4 className="smallertitle">or other things to think about</h4>
         <TodoList 
         todos={this.state.todoscurrently}
         handleToggleComplete= {this.ToggleComplete}/>
