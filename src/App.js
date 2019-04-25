@@ -24,15 +24,28 @@ class App extends React.Component {
       ],
       todo: ''
     };
-    
   }
+    
+    AddTodoItem = element => {
+        element.preventDefault();
+        let newtodo = this.state.todoscurrently.slice();
+        newtodo.push({task: this.state.todo, completed: false, id: Date.now()});
+        this.setState({newtodo, todo: ''});
+    }
+
+    ChangeTodo = element => {
+      this.setState({[element.target.name]: element.target.value});
+    }
   
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <TodoList todos={this.state.todoscurrently} />
-        <TodoForm />
+        <TodoList 
+        todos={this.state.todoscurrently} />
+        <TodoForm 
+        value={this.state.todo}
+        handleChangeTodo={this.ChangeTodo}
+        handleAddTodoItem={this.AddTodoItem}/>
       </div>
     );
   }

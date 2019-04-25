@@ -9,7 +9,6 @@ import Todo from './Todo';
 function TodoList(props) {
   return (
         <div className="todolistbuilder">
-        {/* <p>{props[0].task}</p> */}
         {props.todos.map(todo => <Todo todo={todo} key={todo.id}/>)}
         </div>
         );
