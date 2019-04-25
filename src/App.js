@@ -28,9 +28,9 @@ class App extends React.Component {
     
     AddTodoItem = element => {
         element.preventDefault();
-        let newtodo = this.state.todoscurrently.slice();
-        newtodo.push({task: this.state.todo, completed: false, id: Date.now()});
-        this.setState({newtodo, todo: ''});
+        let todoscurrently = this.state.todoscurrently.slice();
+        todoscurrently.push({task: this.state.todo, completed: false, id: Date.now()});
+        this.setState({todoscurrently, todo: ''});
     }
 
     ChangeTodo = element => {
