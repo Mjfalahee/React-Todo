@@ -1,0 +1,31 @@
+$font1 :'Alfa Slab One', cursive;
+$font2 :'Poiret One', cursive;
+
+
+.appcontainer {
+    //margin: 0 auto;
+    padding: 15px;
+    width: 600px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: lightcoral;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        font-family: $font1;
+        font-weight: 200;
+        color: black;
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+
+    .smallertitle {
+        font-family: $font1;
+        font-weight: 200;
+        color: black;
+        margin-top: 0;
+    }
+}

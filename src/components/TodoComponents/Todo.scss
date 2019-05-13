@@ -1,0 +1,66 @@
+$font1 :'Alfa Slab One', cursive;
+$font2 :'Poiret One', cursive;
+
+
+//general styles
+
+.todolist {
+    font-family: $font2;
+    font-weight: 900;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.inputform {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+//item-specific
+
+.todoitem {
+    margin-bottom: 2px;
+}
+
+.todoitemcompleted {
+    text-decoration: line-through;
+    color: lightgrey;
+    margin-bottom: 2px;
+}
+
+
+.textbox {
+    height: 30px;
+    width: 250px;
+    padding: 5px;
+    margin-bottom: 25px;
+    font-family: $font2;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.enter {
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    font-family: $font2;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.clear {
+    height: 30px;
+    width: 200px;
+    border-radius: 15px;
+    font-family: $font2;
+    font-weight: 600;
+    font-size: 20px;
+}
